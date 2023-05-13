@@ -1,16 +1,19 @@
+import React from 'react';
 import './ExpenseItem.css';
-import ExpenseDate from './ExpenseDate.js';
+import ExpenseDate from './ExpenseDate';
+import Card from '../UI/Card';
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   //? props
   return (
-    <div className="expense-item">
+    //? combine components -> composition (props.children feature)
+    <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
         <h2>{props.title}</h2>
       </div>
       <div className="expense-item__price">${props.amount}</div>
-    </div>
+    </Card>
   );
 }
 
