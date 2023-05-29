@@ -13,9 +13,12 @@ const NewExpense = (props) => {
     };
     /// lifting state up to App component
     props.onAddExpense(expenseData);
+    setIsEdting(false);
   };
 
-  const 
+  const startEditingHandler = () => {
+    setIsEdting(true);
+  }
 
   const cancelHandler = () => {
     setIsEdting(false);
@@ -24,11 +27,11 @@ const NewExpense = (props) => {
   return (
     //? pass data props from child to parent
     <div className="new-expense">
-      <button onClick={addExpenseHandler}>Add New Expense</button>
-      <ExpenseForm
+      {!isEditing && <button onClick={startEditingHandler}>Add New Expense</button>}
+      {isEditing && <ExpenseForm
         onSaveExpenseData={saveExpenseDataHandler}
         onCancel={cancelHandler}
-      />
+      />}
     </div>
   );
 };
