@@ -84,7 +84,7 @@ const Form = (props) => {
             <input type="number" value={duration} onChange={dataInputChangeHandler} id="duration" />
           </p>
         </div>
-        <p className={styles.action}>
+        <p className={styles.actions}>
           <button type="reset" onClick={resetHandler} className={styles.buttonAlt}>
             Reset
           </button>
